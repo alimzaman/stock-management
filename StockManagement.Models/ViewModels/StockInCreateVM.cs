@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,11 @@ namespace StockManagement.Models.ViewModels
     {
         public int Id { get; set; }
         public string Description { get; set; }
+        public string Data { get; set; }
+
+
+        [DataType(DataType.Date)]
+        [Display(Name = "Stock Date")]
         public DateTime StockDate { get; set; }
 
         [NotMapped]

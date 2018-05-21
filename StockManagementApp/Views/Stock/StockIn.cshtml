@@ -15,6 +15,13 @@
         <h4>StockInCreateVM</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @if (ViewBag.Message != null)
+        {
+            <div class="alert alert-success">
+                @ViewBag.Message
+            </div>
+        }
+
 
 
         <div class="form-group">
@@ -42,7 +49,7 @@
                             <div class="form-group">
                                 @Html.Label("Category", htmlAttributes: new { @class = "control-label col-md-2" })
                                 <div class="col-md-8">
-                                    @Html.DropDownList("CategoryDropDown", new SelectList(Model.Categories, "Id", "Name"), htmlAttributes: new { @class = "dropdown form-control", id = "categoryDD" })
+                                    @Html.DropDownList("CategoryDropDown", new SelectList(Model.Categories, "Id", "Name"), "Select...", htmlAttributes: new { @class = "dropdown form-control", id = "categoryDD" })
                                 </div>
                             </div>
 
@@ -60,28 +67,28 @@
 
                     </div>
                     <div class="col-md-6">
-                       
+
                         <div class="row">
                             <div class="form-group">
-                                @Html.Label("Qty",new{@class="control-label col-md-2"})
+                                @Html.Label("Qty", new { @class = "control-label col-md-2" })
                                 <div class="col-md-6">
-                                    @Html.TextBox("Qty","1",htmlAttributes:new{@class="form-control", placeholder="Provide Qty"})
+                                    @Html.TextBox("Qty", "1", htmlAttributes: new { @class = "form-control", placeholder = "Provide Qty" })
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-offset-6">
-                                <input type="button" id="addButton" class="btn btn-success " value="Add"/>
+                                <input type="button" id="addButton" class="btn btn-success " value="Add" />
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>
             </div>
 
         </div>
-        
-        <hr/>
+
+        <hr />
         <div class="form-group">
             <div class="row">
                 <table id="productTable" class="table table-bordered table-striped table-hover">
@@ -91,9 +98,7 @@
                             <th>Qty</th>
                         </tr>
                     </thead>
-                    <tbody id="tbProducts">
-                        
-                    </tbody>
+                    <tbody id="tbProducts"></tbody>
                 </table>
             </div>
         </div>
