@@ -18,5 +18,7 @@ namespace StockManagement.Models.DatabaseContext
         public DbSet<StockOutDetail> StockOutDetails { get; set; }
         public DbSet<Inventory> Inventories { get; set; }
 
+        public DbSet<Party> Parties { get; set; }
+
     }
 }

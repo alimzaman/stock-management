@@ -50,6 +50,7 @@
     <Compile Include="DatabaseContext\StockDBContext.cs" />
     <Compile Include="EntityModels\Category.cs" />
     <Compile Include="EntityModels\Inventory.cs" />
+    <Compile Include="EntityModels\Party.cs" />
     <Compile Include="EntityModels\Product.cs" />
     <Compile Include="EntityModels\StockIn.cs" />
     <Compile Include="EntityModels\StockInDetail.cs" />
@@ -62,6 +63,18 @@
     <Compile Include="Migrations\201805091442389_Product_Name_required.cs" />
     <Compile Include="Migrations\201805091442389_Product_Name_required.Designer.cs">
       <DependentUpon>201805091442389_Product_Name_required.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806251408195_Party_Add.cs" />
+    <Compile Include="Migrations\201806251408195_Party_Add.Designer.cs">
+      <DependentUpon>201806251408195_Party_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806251414524_Party_IsDeleted_Introduce.cs" />
+    <Compile Include="Migrations\201806251414524_Party_IsDeleted_Introduce.Designer.cs">
+      <DependentUpon>201806251414524_Party_IsDeleted_Introduce.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806251449556_StockIn_PartyIdAdded.cs" />
+    <Compile Include="Migrations\201806251449556_StockIn_PartyIdAdded.Designer.cs">
+      <DependentUpon>201806251449556_StockIn_PartyIdAdded.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -77,6 +90,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805091442389_Product_Name_required.resx">
       <DependentUpon>201805091442389_Product_Name_required.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806251408195_Party_Add.resx">
+      <DependentUpon>201806251408195_Party_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806251414524_Party_IsDeleted_Introduce.resx">
+      <DependentUpon>201806251414524_Party_IsDeleted_Introduce.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806251449556_StockIn_PartyIdAdded.resx">
+      <DependentUpon>201806251449556_StockIn_PartyIdAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

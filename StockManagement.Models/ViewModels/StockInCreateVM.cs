@@ -15,6 +15,9 @@ namespace StockManagement.Models.ViewModels
         public string Description { get; set; }
         public string Data { get; set; }
 
+        [Display(Name = "Party")]
+        public int? PartyId { get; set; }
+
 
         [DataType(DataType.Date)]
         [Display(Name = "Stock Date")]
@@ -25,5 +28,6 @@ namespace StockManagement.Models.ViewModels
         [NotMapped]
         public List<StockInDetail> StockInDetails { get; set; }
 
+        public List<Party> Parties { get; set; }
     }
 }
