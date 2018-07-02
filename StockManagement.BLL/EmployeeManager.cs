@@ -3,19 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using StockManagement.BLL.Base;
 using StockManagement.Models.EntityModels;
 using StockManagement.Repositories;
+using StockManagement.Repositories.Base;
 
 namespace StockManagement.BLL
 {
-    public class EmployeeManager
+    public class EmployeeManager : Manager<Employee>
     {
-        EmployeeRepository _employeeRepository= new EmployeeRepository();
-
-
-       public bool Add(Employee employee)
+       
+        public EmployeeManager() : base(new EmployeeRepository())
         {
-            return _employeeRepository.Add(employee);
         }
+
+        public override bool Add(Employee employee)
+        {
+
+            return base.Add(employee);
+        }
+
+        
     }
 }
