@@ -21,5 +21,9 @@ namespace StockManagement.Models.DatabaseContext
         public DbSet<Party> Parties { get; set; }
         public DbSet<Employee> Employees { get; set; }
 
+        public DbSet<File> Files { get; set; }
+
+       
+
     }
 }

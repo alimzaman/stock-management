@@ -12,6 +12,7 @@ namespace StockManagement.Models.EntityModels
         public string Name { get; set; }
         public string Address { get; set; }
         public string Designation { get; set; }
+        public bool IsDeleted { get; set; }
 
     }
 }

@@ -11,6 +11,8 @@ namespace StockManagement.Repositories
 {
     public class PartyRepository
     {
+
+
         StockDBContext db = new StockDBContext();
         public bool Add(Party party)
         {
