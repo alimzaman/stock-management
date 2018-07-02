@@ -19,6 +19,7 @@ namespace StockManagement.Models.DatabaseContext
         public DbSet<Inventory> Inventories { get; set; }
 
         public DbSet<Party> Parties { get; set; }
+        public DbSet<Employee> Employees { get; set; }
 
     }
 }
