@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="DatabaseContext\StockDBContext.cs" />
     <Compile Include="EntityModels\Category.cs" />
+    <Compile Include="EntityModels\Employee.cs" />
     <Compile Include="EntityModels\Inventory.cs" />
     <Compile Include="EntityModels\Party.cs" />
     <Compile Include="EntityModels\Product.cs" />
@@ -76,6 +77,10 @@
     <Compile Include="Migrations\201806251449556_StockIn_PartyIdAdded.Designer.cs">
       <DependentUpon>201806251449556_StockIn_PartyIdAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807021214036_Add_Employee_Model.cs" />
+    <Compile Include="Migrations\201807021214036_Add_Employee_Model.Designer.cs">
+      <DependentUpon>201807021214036_Add_Employee_Model.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\StockInCreateVM.cs" />
@@ -99,6 +104,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201806251449556_StockIn_PartyIdAdded.resx">
       <DependentUpon>201806251449556_StockIn_PartyIdAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807021214036_Add_Employee_Model.resx">
+      <DependentUpon>201807021214036_Add_Employee_Model.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
