@@ -47,6 +47,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Base\Repository.cs" />
+    <Compile Include="EmployeeRepository.cs" />
+    <Compile Include="FileRepository.cs" />
     <Compile Include="PartyRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -54,6 +57,10 @@
     <ProjectReference Include="..\StockManagement.Models\StockManagement.Models.csproj">
       <Project>{45a1a3a9-d94b-40ba-a311-a56b0874d8f0}</Project>
       <Name>StockManagement.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StockManagementApp.Models.Contracts\StockManagementApp.Models.Contracts.csproj">
+      <Project>{E63EB5DC-CA0F-4313-B3DB-CE39D560AF4C}</Project>
+      <Name>StockManagementApp.Models.Contracts</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

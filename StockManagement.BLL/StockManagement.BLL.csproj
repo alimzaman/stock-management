@@ -40,6 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Base\BaseManager.cs" />
+    <Compile Include="EmployeeManager.cs" />
+    <Compile Include="FileManager.cs" />
     <Compile Include="PartyManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

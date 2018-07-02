@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockManagement.Repositorie
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockManagement.BLL", "StockManagement.BLL\StockManagement.BLL.csproj", "{DF1668B1-F66B-4AF8-BEBE-86C297628519}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockManagementApp.Models.Contracts", "StockManagementApp.Models.Contracts\StockManagementApp.Models.Contracts.csproj", "{E63EB5DC-CA0F-4313-B3DB-CE39D560AF4C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{DF1668B1-F66B-4AF8-BEBE-86C297628519}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DF1668B1-F66B-4AF8-BEBE-86C297628519}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DF1668B1-F66B-4AF8-BEBE-86C297628519}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E63EB5DC-CA0F-4313-B3DB-CE39D560AF4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E63EB5DC-CA0F-4313-B3DB-CE39D560AF4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E63EB5DC-CA0F-4313-B3DB-CE39D560AF4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E63EB5DC-CA0F-4313-B3DB-CE39D560AF4C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
