@@ -3,15 +3,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using StockManagement.BLL.Base;
 using StockManagement.Models.EntityModels;
 using StockManagement.Repositories;
+using StockManagement.Repositories.Base;
+using StockManagementApp.Models.Contracts;
 
 namespace StockManagement.BLL
 {
-    public class PartyManager
+    public class PartyManager:Manager<Party>
     {
-        PartyRepository repository = new PartyRepository();
-        public bool Add(Party party)
+        private PartyRepository _partyRepository
+        {
+            get
+            {
+                PartyRepository partyRepository = (PartyRepository)_repository;
+                return partyRepository;
+            }
+        }
+        public PartyManager() : base(new PartyRepository())
+        {
+        }
+        public override bool Add(Party party)
         {
             if (string.IsNullOrEmpty(party.Name))
             {
@@ -23,32 +36,16 @@ namespace StockManagement.BLL
                 throw new Exception("Party Contact No is not provided!");
             }
 
-            return repository.Add(party);
+            return _partyRepository.Add(party);
         }
 
-        public bool Update(Party party)
+        public ICollection<Party> GetByName(string name)
         {
-            return repository.Update(party);
+            return _partyRepository.Get(c => c.Name.Contains(name));
         }
+        
 
-        public bool Remove(Party party)
-        {
-            return repository.Remove(party);
-        }
-
-        public List<Party> GetAll(bool withDeleted=false)
-        {
-            return repository.GetAll(withDeleted);
-        }
-
-        public Party GetById(int id)
-        {
-            return repository.GetById(id);
-        }
-
-        public void Dispose()
-        {
-            repository.Dispose();
-        }
+       
+       
     }
 }

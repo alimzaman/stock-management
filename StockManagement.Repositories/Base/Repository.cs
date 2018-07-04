@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Linq.Expressions;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using StockManagement.Models.DatabaseContext;
@@ -10,13 +12,13 @@ using StockManagementApp.Models.Contracts;
 
 namespace StockManagement.Repositories.Base
 {
-    public abstract class Repository<T> where T : class
+    public abstract class Repository<T> : IDisposable where T :class
     {
-        StockDBContext db = new StockDBContext();
+        protected StockDBContext db = new StockDBContext();
         public virtual bool Add(T entity)
         {
             db.Set<T>().Add(entity);
-            return db.SaveChanges()>0;
+            return db.SaveChanges() > 0;
         }
 
         public virtual bool Update(T entity)
@@ -29,13 +31,42 @@ namespace StockManagement.Repositories.Base
         public virtual bool Remove(IDeletable entity)
         {
             entity.Delete();
-            return Update((T) entity);
+            return Update((T)entity);
+        }
+
+        public virtual bool Remove(ICollection<IDeletable> entities)
+        {
+            int removeCount = 0;
+            foreach (var entity in entities)
+            {
+                bool isRemoved = Remove(entity);
+                if (isRemoved)
+                {
+                    removeCount++;
+                }
+            }
+
+            return entities.Count == removeCount;
+
         }
 
         public virtual ICollection<T> GetAll(bool withDeleted = false)
         {
-           return db.Set<T>().ToList();
+            //Expression<Func<IDeletable, bool>> query = c => true;
+            //bool isDeletableObj = typeof(IDeletable).IsAssignableFrom(typeof(T));
+            //if (isDeletableObj)
+            //{
+            //    query = c => c.IsDeleted == false || c.IsDeleted == withDeleted;
+
+            //}
+            return db.Set<T>().ToList();
         }
+
+        public virtual ICollection<T> Get(Expression<Func<T, bool>> query)
+        {
+            return db.Set<T>().Where(query).ToList();
+        }
+      
 
         public virtual T GetById(int id)
         {
@@ -43,5 +74,18 @@ namespace StockManagement.Repositories.Base
         }
 
 
+        public virtual void Dispose()
+        {
+            db?.Dispose();
+        }
+    }
+
+
+    public abstract class DeleteableRepository<T> : Repository<T> where T : class, IDeletable
+    {
+        public override ICollection<T> GetAll(bool withDeleted = false)
+        {
+            return db.Set<T>().Where(c => c.IsDeleted == false || c.IsDeleted == withDeleted).ToList();
+        }
     }
 }

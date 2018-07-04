@@ -1,8 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using StockManagementApp.Models.Contracts;
 
 namespace StockManagement.Models.EntityModels
 {
-    public class Product
+    public class Product 
     {
         public int Id { get; set; }
 

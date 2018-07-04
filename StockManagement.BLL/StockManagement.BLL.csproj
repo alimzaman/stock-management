@@ -55,6 +55,10 @@
       <Project>{9a6a0da1-f4d0-41d6-9634-8740f183ee0e}</Project>
       <Name>StockManagement.Repositories</Name>
     </ProjectReference>
+    <ProjectReference Include="..\StockManagementApp.Models.Contracts\StockManagementApp.Models.Contracts.csproj">
+      <Project>{E63EB5DC-CA0F-4313-B3DB-CE39D560AF4C}</Project>
+      <Name>StockManagementApp.Models.Contracts</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

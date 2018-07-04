@@ -19,7 +19,7 @@ namespace StockManagementApp.Controllers
         {
             var model = new StockInCreateVM();
             model.Categories = db.Categories.ToList();
-            model.Parties = _partyManager.GetAll();
+            model.Parties = _partyManager.GetAll().ToList();
             ViewBag.ProductDropDown = new SelectListItem[]{new SelectListItem(){Value="",Text = "Select..."}};
            
             return View(model);
@@ -40,7 +40,7 @@ namespace StockManagementApp.Controllers
 
 
             model.Categories = db.Categories.ToList();
-            model.Parties = _partyManager.GetAll();
+            model.Parties = _partyManager.GetAll().ToList();
             ViewBag.ProductDropDown = new SelectListItem[] { new SelectListItem() { Value = "", Text = "Select..." } };
             return View(model);
         }

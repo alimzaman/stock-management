@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using StockManagement.Repositories.Base;
+using StockManagementApp.Models.Contracts;
 
 namespace StockManagement.BLL.Base
 {
-    public abstract class Manager<T> where T:class
+    public abstract class Manager<T>:IDisposable where T:class
     {
-        private Repository<T> _repository;
+        protected Repository<T> _repository;
 
         public Manager(Repository<T> repository)
         {
@@ -29,7 +30,12 @@ namespace StockManagement.BLL.Base
 
         public virtual bool Remove(T entity)
         {
-            return false;
+            bool isDeleteable = entity is IDeletable;
+            if (!isDeleteable)
+            {
+                throw new Exception("This Item is not Deleteable!");
+            }
+            return _repository.Remove((IDeletable)entity);
         }
 
         public virtual T GetById(int id)
@@ -40,6 +46,11 @@ namespace StockManagement.BLL.Base
         public virtual ICollection<T> GetAll(bool withDeleted=false)
         {
             return _repository.GetAll(withDeleted);
+        }
+
+        public void Dispose()
+        {
+            _repository?.Dispose();
         }
     }
 }
