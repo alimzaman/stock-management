@@ -51,6 +51,7 @@
     <Compile Include="EmployeeRepository.cs" />
     <Compile Include="FileRepository.cs" />
     <Compile Include="PartyRepository.cs" />
+    <Compile Include="ProductRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
