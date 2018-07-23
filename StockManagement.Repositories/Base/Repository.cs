@@ -21,6 +21,7 @@ namespace StockManagement.Repositories.Base
         {
             this.db = db;
         }
+       
 
         public virtual bool Add(T entity)
         {

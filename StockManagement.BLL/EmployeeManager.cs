@@ -19,6 +19,8 @@ namespace StockManagement.BLL
 
         public override bool Add(Employee employee)
         {
+            EmployeeRepository repository = new EmployeeRepository();
+
 
             return base.Add(employee);
         }
