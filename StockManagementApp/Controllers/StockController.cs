@@ -14,7 +14,7 @@ namespace StockManagementApp.Controllers
     public class StockController : Controller
     {
         StockDBContext db = new StockDBContext();
-        PartyManager _partyManager = new PartyManager();
+        PartyManager _partyManager;
         public ActionResult StockIn()
         {
             var model = new StockInCreateVM();

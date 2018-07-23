@@ -7,7 +7,7 @@ using StockManagementApp.Models.Contracts;
 
 namespace StockManagement.Models.EntityModels
 {
-    public class Party:IDeletable
+    public class Party:IDeletable,IEntityModel
     {
         public int Id { get; set; }
 

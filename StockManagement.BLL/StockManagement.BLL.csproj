@@ -47,9 +47,17 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\StockManagement.BLL.Contracts\StockManagement.BLL.Contracts.csproj">
+      <Project>{267A0A4F-0043-4319-83E3-D99735602853}</Project>
+      <Name>StockManagement.BLL.Contracts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\StockManagement.Models\StockManagement.Models.csproj">
       <Project>{45a1a3a9-d94b-40ba-a311-a56b0874d8f0}</Project>
       <Name>StockManagement.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StockManagement.Repositories.Contracts\StockManagement.Repositories.Contracts.csproj">
+      <Project>{16BFA34F-CCB4-4610-900D-54B4DB5FD8B1}</Project>
+      <Name>StockManagement.Repositories.Contracts</Name>
     </ProjectReference>
     <ProjectReference Include="..\StockManagement.Repositories\StockManagement.Repositories.csproj">
       <Project>{9a6a0da1-f4d0-41d6-9634-8740f183ee0e}</Project>

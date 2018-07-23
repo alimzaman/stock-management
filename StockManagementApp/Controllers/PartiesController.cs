@@ -7,14 +7,21 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using StockManagement.BLL;
+using StockManagement.BLL.Contracts;
 using StockManagement.Models.DatabaseContext;
 using StockManagement.Models.EntityModels;
+using StockManagement.Repositories;
 
 namespace StockManagementApp.Controllers
 {
     public class PartiesController : Controller
     {
-        PartyManager _partyManager = new PartyManager();
+        IPartyManager _partyManager;
+
+        public PartiesController(IPartyManager partyManager)
+        {
+            _partyManager = partyManager;
+        }
 
         // GET: Parties
         public ActionResult Index()

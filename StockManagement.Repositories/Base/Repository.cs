@@ -8,13 +8,20 @@ using System.Text;
 using System.Threading.Tasks;
 using StockManagement.Models.DatabaseContext;
 using StockManagement.Models.EntityModels;
+using StockManagement.Repositories.Contracts;
 using StockManagementApp.Models.Contracts;
 
 namespace StockManagement.Repositories.Base
 {
-    public abstract class Repository<T> : IDisposable where T :class
+    public abstract class Repository<T>:IRepository<T>  where T :class,IEntityModel
     {
-        protected StockDBContext db = new StockDBContext();
+        protected DbContext db;
+
+        public Repository(DbContext db)
+        {
+            this.db = db;
+        }
+
         public virtual bool Add(T entity)
         {
             db.Set<T>().Add(entity);
@@ -81,11 +88,15 @@ namespace StockManagement.Repositories.Base
     }
 
 
-    public abstract class DeleteableRepository<T> : Repository<T> where T : class, IDeletable
+    public abstract class DeleteableRepository<T> : Repository<T> where T : class, IDeletable,IEntityModel
     {
         public override ICollection<T> GetAll(bool withDeleted = false)
         {
             return db.Set<T>().Where(c => c.IsDeleted == false || c.IsDeleted == withDeleted).ToList();
+        }
+
+        protected DeleteableRepository(DbContext db) : base(db)
+        {
         }
     }
 }

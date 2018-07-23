@@ -4,21 +4,21 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using StockManagement.Models.DatabaseContext;
 using StockManagement.Models.EntityModels;
 using StockManagement.Repositories.Base;
 using StockManagement.Repositories.Contracts;
 
 namespace StockManagement.Repositories
 {
-    public class PartyRepository:DeleteableRepository<Party>,IPartyRepository
+    public class PartyOracleRepository:Repository<Party>,IPartyRepository
     {
         public ICollection<Party> GetByName(string name)
         {
-            return Get(c => c.Name.Contains(name));
+            //ORACLE Code 
+            return null;
         }
 
-        public PartyRepository(DbContext db) : base(db)
+        public PartyOracleRepository(DbContext db) : base(db)
         {
         }
     }

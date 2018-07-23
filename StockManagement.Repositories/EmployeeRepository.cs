@@ -12,5 +12,8 @@ namespace StockManagement.Repositories
 {
     public class EmployeeRepository:Repository<Employee>
     {
+        public EmployeeRepository(DbContext db) : base(db)
+        {
+        }
     }
 }

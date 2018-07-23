@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockManagement.BLL", "Stoc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockManagementApp.Models.Contracts", "StockManagementApp.Models.Contracts\StockManagementApp.Models.Contracts.csproj", "{E63EB5DC-CA0F-4313-B3DB-CE39D560AF4C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockManagement.Repositories.Contracts", "StockManagement.Repositories.Contracts\StockManagement.Repositories.Contracts.csproj", "{16BFA34F-CCB4-4610-900D-54B4DB5FD8B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockManagement.BLL.Contracts", "StockManagement.BLL.Contracts\StockManagement.BLL.Contracts.csproj", "{267A0A4F-0043-4319-83E3-D99735602853}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{E63EB5DC-CA0F-4313-B3DB-CE39D560AF4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E63EB5DC-CA0F-4313-B3DB-CE39D560AF4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E63EB5DC-CA0F-4313-B3DB-CE39D560AF4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16BFA34F-CCB4-4610-900D-54B4DB5FD8B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16BFA34F-CCB4-4610-900D-54B4DB5FD8B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16BFA34F-CCB4-4610-900D-54B4DB5FD8B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16BFA34F-CCB4-4610-900D-54B4DB5FD8B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{267A0A4F-0043-4319-83E3-D99735602853}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{267A0A4F-0043-4319-83E3-D99735602853}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{267A0A4F-0043-4319-83E3-D99735602853}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{267A0A4F-0043-4319-83E3-D99735602853}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

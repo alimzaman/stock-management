@@ -74,6 +74,18 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Unity.Abstractions, Version=3.3.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Abstractions.3.3.0\lib\net45\Unity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Container, Version=5.7.0.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Container.5.7.0\lib\net45\Unity.Container.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mvc, Version=5.0.13.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Mvc.5.0.13\lib\net45\Unity.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Web.Razor">
@@ -205,6 +217,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\UnityConfig.cs" />
+    <Compile Include="App_Start\UnityMvcActivator.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PartiesController.cs" />
@@ -263,6 +277,10 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\StockManagement.BLL.Contracts\StockManagement.BLL.Contracts.csproj">
+      <Project>{267A0A4F-0043-4319-83E3-D99735602853}</Project>
+      <Name>StockManagement.BLL.Contracts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\StockManagement.BLL\StockManagement.BLL.csproj">
       <Project>{df1668b1-f66b-4af8-bebe-86c297628519}</Project>
       <Name>StockManagement.BLL</Name>
@@ -270,6 +288,14 @@
     <ProjectReference Include="..\StockManagement.Models\StockManagement.Models.csproj">
       <Project>{45a1a3a9-d94b-40ba-a311-a56b0874d8f0}</Project>
       <Name>StockManagement.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StockManagement.Repositories.Contracts\StockManagement.Repositories.Contracts.csproj">
+      <Project>{16BFA34F-CCB4-4610-900D-54B4DB5FD8B1}</Project>
+      <Name>StockManagement.Repositories.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StockManagement.Repositories\StockManagement.Repositories.csproj">
+      <Project>{9A6A0DA1-F4D0-41D6-9634-8740F183EE0E}</Project>
+      <Name>StockManagement.Repositories</Name>
     </ProjectReference>
     <ProjectReference Include="..\StockManagementApp.Models.Contracts\StockManagementApp.Models.Contracts.csproj">
       <Project>{E63EB5DC-CA0F-4313-B3DB-CE39D560AF4C}</Project>

@@ -3,7 +3,7 @@ using StockManagementApp.Models.Contracts;
 
 namespace StockManagement.Models.EntityModels
 {
-    public class Product 
+    public class Product :IEntityModel
     {
         public int Id { get; set; }
 

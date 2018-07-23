@@ -1,6 +1,8 @@
-﻿namespace StockManagement.Models.EntityModels
+﻿using StockManagementApp.Models.Contracts;
+
+namespace StockManagement.Models.EntityModels
 {
-    public class StockOutDetail
+    public class StockOutDetail:IEntityModel
     {
         public int Id { get; set; }
         public int StockOutId { get; set; }

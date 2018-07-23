@@ -13,7 +13,7 @@ namespace StockManagement.BLL
     public class EmployeeManager : Manager<Employee>
     {
        
-        public EmployeeManager() : base(new EmployeeRepository())
+        public EmployeeManager(EmployeeRepository repository) : base(repository)
         {
         }
 

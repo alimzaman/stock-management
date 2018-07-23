@@ -4,25 +4,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using StockManagement.BLL.Base;
+using StockManagement.BLL.Contracts;
 using StockManagement.Models.EntityModels;
 using StockManagement.Repositories;
 using StockManagement.Repositories.Base;
+using StockManagement.Repositories.Contracts;
 using StockManagementApp.Models.Contracts;
 
 namespace StockManagement.BLL
 {
-    public class PartyManager:Manager<Party>
+    public class PartyManager:Manager<Party>,IPartyManager
     {
-        private PartyRepository _partyRepository
+        private IPartyRepository _partyRepository;
+        
+        public PartyManager(IPartyRepository partyRepository) : base(partyRepository)
         {
-            get
-            {
-                PartyRepository partyRepository = (PartyRepository)_repository;
-                return partyRepository;
-            }
-        }
-        public PartyManager() : base(new PartyRepository())
-        {
+            this._partyRepository = partyRepository;
         }
         public override bool Add(Party party)
         {
@@ -36,12 +33,13 @@ namespace StockManagement.BLL
                 throw new Exception("Party Contact No is not provided!");
             }
 
+            
             return _partyRepository.Add(party);
         }
 
         public ICollection<Party> GetByName(string name)
         {
-            return _partyRepository.Get(c => c.Name.Contains(name));
+            return _partyRepository.GetByName(name);
         }
         
 

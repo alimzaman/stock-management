@@ -5,12 +5,18 @@ using System.Text;
 using System.Threading.Tasks;
 using StockManagement.Models.EntityModels;
 using StockManagement.Repositories;
+using StockManagement.Repositories.Base;
 
 namespace StockManagement.BLL
 {
     public class FileManager
     {
-        FileRepository _fileRepository = new FileRepository();
+        Repository<File> _fileRepository;
+
+        public FileManager(Repository<File> fileRepository)
+        {
+            this._fileRepository = fileRepository;
+        }
 
         public bool Add(File file)
         {
